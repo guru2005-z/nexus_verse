@@ -473,14 +473,12 @@ export const NexusVerse: React.FC = () => {
           <div className="flex justify-center mb-12">
             <div className="p-1.5 rounded-2xl bg-slate-900 border border-slate-800 flex items-center gap-2">
               {[
-                { day: 1, label: "Day 1: Nov 20", sub: "Kickoff & Workshops" },
-                { day: 2, label: "Day 2: Nov 21", sub: "Hacking & Reviews" },
-                { day: 3, label: "Day 3: Nov 22", sub: "Grand Finale & Gala" },
+                { day: 1, label: "Sunday, Oct 11, 2026", sub: "Grand Symposium & 5 Competitions" }
               ].map((tab) => (
                 <button
                   key={tab.day}
                   onClick={() => setSelectedDay(tab.day)}
-                  className={`px-5 py-3 rounded-xl text-left transition-all ${
+                  className={`px-6 py-3 rounded-xl text-left transition-all ${
                     selectedDay === tab.day
                       ? 'bg-gradient-to-r from-cyan-500 to-indigo-600 text-white shadow-lg shadow-cyan-500/20 font-bold'
                       : 'text-slate-400 hover:text-white hover:bg-slate-800/40'

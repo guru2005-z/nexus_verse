@@ -341,7 +341,7 @@ apiRouter.get('/certificate/:id', (req: Request, res: Response) => {
       organizer: NEXUS_VERSE_CONFIG.edition,
       issueDate: "November 22, 2026",
       status: "Verified IEEE Certificate",
-      credentialUrl: `https://nexusverse2026.nbkrist.ac.in/verify/${reg.id}`
+      credentialUrl: `https://nbkristieee.in/nexus-verse/ticket/${reg.id}`
     }
   });
 });

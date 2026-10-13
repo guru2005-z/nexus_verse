@@ -1,0 +1,6 @@
+{
+  "name": "IEEE Student Branch — NEXUS VERSE & Events Hub",
+  "description": "Premier tech summit and events platform for IEEE Student Branch, featuring NEXUS VERSE 2026, schedule, ticket tiers, Razorpay payments, and admin portal.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -65,20 +65,25 @@ export const NexusNavbar: React.FC = () => {
 
             <div className="h-4 w-px bg-slate-800 hidden sm:block" />
 
-            <Link to="/nexus-verse" className="flex items-center gap-2 group">
-              <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-cyan-400 via-blue-500 to-violet-600 p-[1.5px] transition-transform duration-300 group-hover:scale-105">
-                <div className="w-full h-full bg-slate-950 rounded-[7px] flex items-center justify-center">
-                  <span className="font-mono font-black text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-violet-400 text-xs">
+            <Link to="/nexus-verse" className="flex items-center gap-2.5 group">
+              <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-cyan-400 via-indigo-500 to-purple-600 p-[1.5px] transition-transform duration-300 group-hover:scale-105 shadow-[0_0_15px_rgba(6,182,212,0.4)]">
+                <div className="w-full h-full bg-slate-950 rounded-[10px] flex items-center justify-center">
+                  <span className="font-mono font-black text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-400 text-xs">
                     NV
                   </span>
                 </div>
               </div>
-              <div>
-                <span className="font-display font-black text-base sm:text-lg tracking-tight bg-gradient-to-r from-white via-cyan-100 to-cyan-300 bg-clip-text text-transparent group-hover:to-cyan-400 transition-all">
-                  NEXUS VERSE
-                </span>
-                <span className="ml-1 text-[10px] font-mono font-bold text-violet-400 bg-violet-950/80 px-1 py-0.2 rounded border border-violet-800">
-                  2026
+              <div className="flex flex-col">
+                <div className="flex items-center gap-1.5">
+                  <span className="font-orbitron font-extrabold text-base sm:text-lg tracking-wider bg-gradient-to-r from-white via-cyan-200 to-cyan-400 bg-clip-text text-transparent group-hover:to-purple-300 transition-all text-glow-cyan">
+                    NEXUSVERSE
+                  </span>
+                  <span className="text-[10px] font-mono font-bold text-cyan-300 bg-cyan-950/80 px-1.5 py-0.5 rounded border border-cyan-800">
+                    2K26
+                  </span>
+                </div>
+                <span className="text-[9px] font-mono text-slate-400 -mt-1 hidden sm:block">
+                  IEEE-SB-NBKRIST
                 </span>
               </div>
             </Link>

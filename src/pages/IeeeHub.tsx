@@ -18,6 +18,7 @@ import {
 import { IeeeNavbar } from '../components/common/IeeeNavbar';
 import { Footer } from '../components/common/Footer';
 import { CountdownTimer } from '../components/common/CountdownTimer';
+import { QuantumParticles } from '../components/common/QuantumParticles';
 import { IEEE_CONFIG, NEXUS_VERSE_CONFIG, OTHER_EVENTS, EventItem } from '../config/events';
 
 export const IeeeHub: React.FC = () => {
@@ -60,7 +61,10 @@ export const IeeeHub: React.FC = () => {
       <IeeeNavbar />
 
       {/* ─── HERO SECTION ─── */}
-      <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden cyber-grid">
+      <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden quantum-grid quantum-radial-hero">
+        {/* Interactive Quantum Particles Constellation Canvas */}
+        <QuantumParticles className="absolute inset-0 pointer-events-none z-0 opacity-60" particleCount={50} interactive={true} />
+
         {/* Glow Spheres */}
         <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[350px] bg-gradient-to-tr from-cyan-600/20 via-blue-600/20 to-violet-600/10 blur-[130px] rounded-full pointer-events-none" />
         <div className="absolute top-10 right-10 w-72 h-72 bg-cyan-500/10 blur-[100px] rounded-full pointer-events-none" />

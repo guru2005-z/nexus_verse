@@ -42,6 +42,7 @@ import { NexusNavbar } from '../components/common/NexusNavbar';
 import { Footer } from '../components/common/Footer';
 import { CountdownTimer } from '../components/common/CountdownTimer';
 import { ShareModal } from '../components/common/ShareModal';
+import { QuantumParticles } from '../components/common/QuantumParticles';
 import { NEXUS_VERSE_CONFIG, IEEE_CONFIG } from '../config/events';
 
 export const NexusVerse: React.FC = () => {
@@ -108,32 +109,40 @@ export const NexusVerse: React.FC = () => {
         </div>
       </div>
 
-      {/* ─── FULL-SCREEN HERO SECTION ─── */}
-      <section id="top" className="relative min-h-[92vh] flex items-center justify-center pt-12 pb-24 overflow-hidden cyber-grid">
-        {/* Glow Spheres & Futuristic Beam */}
-        <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[450px] bg-gradient-to-tr from-cyan-500/25 via-blue-600/20 to-violet-600/25 blur-[150px] rounded-full pointer-events-none" />
+      {/* ─── FULL-SCREEN QUANTUM HERO SECTION (QFF SRMAP 2026 Style) ─── */}
+      <section id="top" className="relative min-h-[95vh] flex items-center justify-center pt-16 pb-24 overflow-hidden quantum-grid quantum-radial-hero">
+        {/* Interactive Quantum Particles Constellation Canvas */}
+        <QuantumParticles className="absolute inset-0 pointer-events-none z-0 opacity-75" particleCount={65} interactive={true} />
+
+        {/* Ambient Glowing Neon Orbs & Concentric Orbital Rings */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[850px] h-[550px] bg-gradient-to-tr from-cyan-500/20 via-purple-600/15 to-blue-600/20 blur-[150px] rounded-full pointer-events-none" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[720px] h-[720px] rounded-full border border-cyan-500/15 pointer-events-none animate-pulse-ring" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[980px] h-[980px] rounded-full border border-purple-500/10 pointer-events-none" />
         <div className="absolute -top-32 left-10 w-96 h-96 bg-cyan-500/15 blur-[120px] rounded-full pointer-events-none" />
         <div className="absolute top-1/2 right-10 w-96 h-96 bg-violet-600/15 blur-[120px] rounded-full pointer-events-none" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center space-y-8">
-          {/* Host Tagline pill */}
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-900/90 border border-cyan-500/40 text-cyan-300 text-xs font-mono backdrop-blur-xl shadow-lg shadow-cyan-950/30">
-            <Sparkles className="w-3.5 h-3.5 text-cyan-400" />
-            <span>IEEE Student Branch NBKRIST Presents</span>
+          {/* Host Tagline Pill with Hologram Pulse */}
+          <div className="inline-flex items-center gap-2.5 px-5 py-2 rounded-full bg-slate-950/80 border border-cyan-400/40 text-cyan-300 text-xs font-mono backdrop-blur-2xl shadow-[0_0_20px_rgba(6,182,212,0.3)]">
+            <span className="w-2 h-2 rounded-full bg-cyan-400 animate-ping" />
+            <span className="font-semibold tracking-wider uppercase text-glow-cyan">IEEE-SB-NBKRIST PROUDLY PRESENTS</span>
             <span className="text-slate-600">•</span>
-            <span className="text-violet-300 font-semibold">{NEXUS_VERSE_CONFIG.dates}</span>
+            <span className="text-purple-300 font-bold">{NEXUS_VERSE_CONFIG.dates}</span>
           </div>
 
           {/* Main Title inspired by Qiskit Fall Fest */}
           <div className="space-y-4">
-            <h1 className="font-display font-black text-5xl sm:text-7xl lg:text-8xl tracking-tight text-white leading-none">
-              NEXUS{' '}
-              <span className="bg-gradient-to-r from-cyan-400 via-teal-300 to-indigo-400 bg-clip-text text-transparent">
+            <h1 className="font-orbitron font-black text-5xl sm:text-7xl lg:text-8xl tracking-tight text-white leading-none">
+              NEXUS
+              <span className="bg-gradient-to-r from-cyan-400 via-teal-300 to-purple-400 bg-clip-text text-transparent text-glow-cyan">
                 VERSE
+              </span>
+              <span className="text-3xl sm:text-5xl lg:text-6xl text-cyan-300 font-mono tracking-widest block sm:inline ml-2">
+                2K26
               </span>
             </h1>
 
-            <p className="font-mono text-sm sm:text-lg text-cyan-200/90 font-medium tracking-wide uppercase max-w-3xl mx-auto">
+            <p className="font-mono text-sm sm:text-lg text-cyan-200/90 font-medium tracking-widest uppercase max-w-3xl mx-auto">
               {NEXUS_VERSE_CONFIG.edition}
             </p>
 
@@ -143,27 +152,28 @@ export const NexusVerse: React.FC = () => {
           </div>
 
           {/* Key Coordinates Pill */}
-          <div className="inline-flex flex-wrap items-center justify-center gap-4 text-xs font-mono text-slate-300 p-2 sm:px-5 sm:py-2.5 rounded-2xl bg-slate-900/70 border border-slate-800">
-            <div className="flex items-center gap-1.5 text-cyan-400">
-              <Calendar className="w-4 h-4" />
+          <div className="inline-flex flex-wrap items-center justify-center gap-4 text-xs font-mono text-slate-300 p-2.5 sm:px-6 sm:py-3 rounded-2xl bg-slate-950/80 border border-cyan-500/20 backdrop-blur-xl shadow-lg">
+            <div className="flex items-center gap-1.5 text-cyan-400 font-bold">
+              <Calendar className="w-4 h-4 text-cyan-400" />
               <span>{NEXUS_VERSE_CONFIG.dates}</span>
             </div>
-            <span className="text-slate-600 hidden sm:inline">•</span>
+            <span className="text-slate-700 hidden sm:inline">•</span>
             <div className="flex items-center gap-1.5 text-slate-300">
-              <MapPin className="w-4 h-4 text-violet-400" />
+              <MapPin className="w-4 h-4 text-purple-400" />
               <span>NBKRIST Campus, AP, India</span>
             </div>
-            <span className="text-slate-600 hidden sm:inline">•</span>
+            <span className="text-slate-700 hidden sm:inline">•</span>
             <div className="flex items-center gap-1.5 text-emerald-400 font-bold">
               <Award className="w-4 h-4" />
-              <span>Prize Pool {NEXUS_VERSE_CONFIG.prizePool}</span>
+              <span>{NEXUS_VERSE_CONFIG.prizePool}</span>
             </div>
           </div>
 
-          {/* Live Countdown */}
-          <div className="pt-4 flex flex-col items-center">
-            <p className="text-xs font-mono uppercase tracking-widest text-slate-400 mb-3">
-              Summit Inception Countdown
+          {/* Live Quantum Countdown */}
+          <div className="pt-2 flex flex-col items-center">
+            <p className="text-xs font-mono uppercase tracking-widest text-cyan-400/80 mb-3 flex items-center gap-2">
+              <Clock className="w-3.5 h-3.5 text-cyan-400" />
+              <span>SYMPOSIUM COUNTDOWN</span>
             </p>
             <CountdownTimer targetDate={NEXUS_VERSE_CONFIG.isoStartDate} size="lg" />
           </div>
@@ -172,23 +182,23 @@ export const NexusVerse: React.FC = () => {
           <div className="pt-4 flex flex-wrap items-center justify-center gap-4">
             <Link
               to="/nexus-verse/register"
-              className="inline-flex items-center gap-2 px-8 py-4 rounded-xl font-display font-black text-sm text-slate-950 bg-gradient-to-r from-cyan-400 via-teal-300 to-cyan-400 hover:from-cyan-300 hover:to-teal-200 transition-all duration-300 shadow-[0_0_35px_-5px_rgba(6,182,212,0.7)] hover:shadow-[0_0_45px_0px_rgba(6,182,212,0.9)] hover:scale-105 active:scale-95"
+              className="inline-flex items-center gap-2.5 px-8 py-4 rounded-xl font-display font-black text-sm text-white btn-quantum-glow hover:scale-105 active:scale-95 transition-all duration-300"
             >
-              <Ticket className="w-5 h-5 text-slate-950" />
-              <span>Register Now — Passes From ₹399</span>
+              <Ticket className="w-5 h-5 text-white" />
+              <span>Register for 5 Flagship Events</span>
             </Link>
 
             <a
               href="#schedule"
-              className="inline-flex items-center gap-2 px-6 py-4 rounded-xl font-medium text-sm text-slate-200 bg-slate-900/90 hover:bg-slate-800 border border-slate-700 transition-colors"
+              className="inline-flex items-center gap-2 px-6 py-4 rounded-xl font-medium text-sm text-slate-200 bg-slate-900/90 hover:bg-slate-800 border border-cyan-500/30 hover:border-cyan-400 transition-colors backdrop-blur-md"
             >
               <Calendar className="w-4 h-4 text-cyan-400" />
-              <span>View Full Schedule</span>
+              <span>Official Schedule</span>
             </a>
 
             <button
               onClick={() => setShareModalOpen(true)}
-              className="p-4 rounded-xl bg-slate-900/90 hover:bg-slate-800 border border-slate-700 text-slate-300 hover:text-cyan-400 transition-colors"
+              className="p-4 rounded-xl bg-slate-900/90 hover:bg-slate-800 border border-slate-700 hover:border-cyan-400 text-slate-300 hover:text-cyan-400 transition-colors"
               title="Share Event"
             >
               <Share2 className="w-4 h-4" />
@@ -196,22 +206,22 @@ export const NexusVerse: React.FC = () => {
           </div>
 
           {/* Quick Stats Strip */}
-          <div className="pt-10 max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4 text-left">
-            <div className="p-4 rounded-2xl glass-card border-l-2 border-l-cyan-400">
-              <p className="font-display font-black text-3xl text-white">600+</p>
-              <p className="text-xs text-slate-400 font-mono mt-0.5">Elite Delegates</p>
+          <div className="pt-8 max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4 text-left">
+            <div className="p-4 rounded-2xl glass-card-quantum border-l-2 border-l-cyan-400">
+              <p className="font-orbitron font-black text-3xl text-white text-glow-cyan">5</p>
+              <p className="text-xs text-slate-400 font-mono mt-0.5">Flagship Events</p>
             </div>
-            <div className="p-4 rounded-2xl glass-card border-l-2 border-l-blue-400">
-              <p className="font-display font-black text-3xl text-white">36 Hrs</p>
-              <p className="text-xs text-slate-400 font-mono mt-0.5">Non-stop Hacking</p>
+            <div className="p-4 rounded-2xl glass-card-quantum border-l-2 border-l-blue-400">
+              <p className="font-orbitron font-black text-3xl text-white">600+</p>
+              <p className="text-xs text-slate-400 font-mono mt-0.5">Expected Delegates</p>
             </div>
-            <div className="p-4 rounded-2xl glass-card border-l-2 border-l-violet-400">
-              <p className="font-display font-black text-3xl text-white">₹2.5L+</p>
-              <p className="text-xs text-slate-400 font-mono mt-0.5">Cash & Grants</p>
+            <div className="p-4 rounded-2xl glass-card-quantum border-l-2 border-l-purple-400">
+              <p className="font-orbitron font-black text-3xl text-white text-glow-purple">₹2.5L+</p>
+              <p className="text-xs text-slate-400 font-mono mt-0.5">Prize Pool & Grants</p>
             </div>
-            <div className="p-4 rounded-2xl glass-card border-l-2 border-l-emerald-400">
-              <p className="font-display font-black text-3xl text-white">40+ Colleges</p>
-              <p className="text-xs text-slate-400 font-mono mt-0.5">Pan-India Reach</p>
+            <div className="p-4 rounded-2xl glass-card-quantum border-l-2 border-l-emerald-400">
+              <p className="font-orbitron font-black text-3xl text-white">IEEE</p>
+              <p className="text-xs text-slate-400 font-mono mt-0.5">Verified Certificates</p>
             </div>
           </div>
         </div>

@@ -7,7 +7,7 @@ interface CountdownTimerProps {
 }
 
 export const CountdownTimer: React.FC<CountdownTimerProps> = ({
-  targetDate = '2026-11-20T09:00:00+05:30',
+  targetDate = '2026-10-11T09:00:00+05:30',
   size = 'md',
   showLabels = true
 }) => {
@@ -43,9 +43,9 @@ export const CountdownTimer: React.FC<CountdownTimerProps> = ({
 
   if (timeLeft.isExpired) {
     return (
-      <div className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-cyan-950/40 border border-cyan-500/30 text-cyan-400 font-mono text-sm">
-        <span className="w-2 h-2 rounded-full bg-cyan-400 animate-ping" />
-        EVENT IS CURRENTLY LIVE!
+      <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-cyan-950/60 border border-cyan-400 text-cyan-300 font-mono text-sm shadow-[0_0_20px_rgba(6,182,212,0.4)]">
+        <span className="w-2.5 h-2.5 rounded-full bg-cyan-400 animate-ping" />
+        <span className="font-bold tracking-wider">SYMPOSIUM IS LIVE NOW!</span>
       </div>
     );
   }
@@ -53,9 +53,9 @@ export const CountdownTimer: React.FC<CountdownTimerProps> = ({
   const pad = (n: number) => String(n).padStart(2, '0');
 
   const unitStyles = {
-    sm: { box: "px-2.5 py-1.5 min-w-[50px]", num: "text-lg", label: "text-[10px]" },
-    md: { box: "px-4 py-2.5 min-w-[70px]", num: "text-2xl md:text-3xl", label: "text-xs" },
-    lg: { box: "px-5 py-4 min-w-[85px]", num: "text-3xl md:text-5xl", label: "text-xs md:text-sm" },
+    sm: { box: "px-2.5 py-1.5 min-w-[52px]", num: "text-lg", label: "text-[9px]" },
+    md: { box: "px-4 py-3 min-w-[76px]", num: "text-2xl sm:text-3xl", label: "text-[11px]" },
+    lg: { box: "px-5 py-4 min-w-[90px] sm:min-w-[100px]", num: "text-3xl sm:text-5xl", label: "text-xs" },
   }[size];
 
   const units = [
@@ -66,27 +66,32 @@ export const CountdownTimer: React.FC<CountdownTimerProps> = ({
   ];
 
   return (
-    <div className="flex items-center gap-2 sm:gap-3">
+    <div className="flex items-center gap-2 sm:gap-4">
       {units.map((unit, idx) => (
         <React.Fragment key={unit.label}>
           <div className="flex flex-col items-center">
+            {/* Glowing Quantum Card Box */}
             <div
-              className={`flex items-center justify-center rounded-xl bg-slate-900/90 dark:bg-slate-950/80 border border-cyan-500/30 dark:border-cyan-400/20 shadow-[0_0_15px_-3px_rgba(6,182,212,0.2)] backdrop-blur-md ${unitStyles.box}`}
+              className={`quantum-digit-box rounded-xl flex items-center justify-center relative overflow-hidden group transition-all duration-300 hover:border-cyan-400 ${unitStyles.box}`}
             >
-              <span className={`font-mono font-bold tracking-tight bg-gradient-to-b from-white via-cyan-100 to-cyan-400 bg-clip-text text-transparent ${unitStyles.num}`}>
+              {/* Subtle scanning glow background */}
+              <div className="absolute inset-0 bg-gradient-to-b from-cyan-500/10 via-transparent to-purple-500/10 opacity-70 pointer-events-none" />
+
+              <span className={`font-mono font-extrabold tracking-tight bg-gradient-to-b from-white via-cyan-100 to-cyan-400 bg-clip-text text-transparent relative z-10 text-glow-cyan ${unitStyles.num}`}>
                 {unit.value}
               </span>
             </div>
             {showLabels && (
-              <span className={`mt-1.5 font-medium tracking-wider text-slate-400 dark:text-slate-400 uppercase font-mono ${unitStyles.label}`}>
+              <span className={`mt-2 font-mono font-semibold tracking-widest text-cyan-400/80 uppercase text-center ${unitStyles.label}`}>
                 {unit.label}
               </span>
             )}
           </div>
           {idx < units.length - 1 && (
-            <span className={`font-mono font-bold text-cyan-500/50 self-start ${size === 'lg' ? 'text-3xl mt-3' : size === 'md' ? 'text-xl mt-2' : 'text-sm mt-1'}`}>
-              :
-            </span>
+            <div className={`flex flex-col justify-center gap-1.5 opacity-60 self-center ${size === 'lg' ? 'mb-6' : size === 'md' ? 'mb-5' : 'mb-3'}`}>
+              <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse shadow-[0_0_8px_rgba(6,182,212,0.8)]" />
+              <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse shadow-[0_0_8px_rgba(6,182,212,0.8)]" />
+            </div>
           )}
         </React.Fragment>
       ))}

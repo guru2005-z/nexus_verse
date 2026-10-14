@@ -14,6 +14,7 @@ import {
 import { NexusNavbar } from '../components/common/NexusNavbar';
 import { Footer } from '../components/common/Footer';
 import { NEXUS_VERSE_CONFIG, IEEE_CONFIG } from '../config/events';
+import { IeeeStudentBranchLogo, NbkristLogo, IeeeRegion10Logo } from '../components/common/Logos';
 
 export const Certificate: React.FC = () => {
   const [searchId, setSearchId] = useState('');
@@ -117,10 +118,19 @@ export const Certificate: React.FC = () => {
               <div className="absolute bottom-4 left-4 text-cyan-500 font-mono text-xs">◆ ◆ ◆</div>
               <div className="absolute bottom-4 right-4 text-cyan-500 font-mono text-xs">◆ ◆ ◆</div>
 
-              {/* Institution Header */}
+              {/* Institution Header with Logos */}
+              <div className="flex flex-wrap items-center justify-center gap-6 pb-2">
+                <div className="bg-slate-900/90 p-2 rounded-xl border border-slate-800">
+                  <NbkristLogo className="h-10 w-auto" />
+                </div>
+                <div className="bg-slate-900/90 p-2 rounded-xl border border-slate-800">
+                  <IeeeStudentBranchLogo className="h-10 w-auto" />
+                </div>
+              </div>
+
               <div className="space-y-1">
                 <span className="font-mono text-xs text-cyan-400 tracking-widest uppercase font-bold">
-                  IEEE STUDENT BRANCH • STB12381
+                  IEEE STUDENT BRANCH • STB12381 • REGION 10
                 </span>
                 <p className="text-xs text-slate-400">
                   N.B.K.R. Institute of Science & Technology, Vidyanagar, AP

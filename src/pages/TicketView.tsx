@@ -16,6 +16,7 @@ import {
 import { NexusNavbar } from '../components/common/NexusNavbar';
 import { Footer } from '../components/common/Footer';
 import { NEXUS_VERSE_CONFIG, IEEE_CONFIG } from '../config/events';
+import { IeeeStudentBranchLogo, NbkristLogo } from '../components/common/Logos';
 import { RegistrationRecord } from '../types';
 
 export const TicketView: React.FC = () => {
@@ -92,22 +93,27 @@ export const TicketView: React.FC = () => {
         ) : (
           <div className="relative rounded-3xl overflow-hidden bg-slate-900 border border-cyan-500/40 shadow-2xl print:border-black print:bg-white print:shadow-none">
             {/* Top summit header banner */}
-            <div className="bg-gradient-to-r from-cyan-600 via-blue-700 to-indigo-800 p-6 text-white flex items-center justify-between">
-              <div>
-                <span className="text-[10px] font-mono uppercase tracking-widest text-cyan-200">
-                  IEEE STUDENT BRANCH • NBKRIST
-                </span>
-                <h1 className="font-display font-black text-2xl sm:text-3xl tracking-tight">
-                  {NEXUS_VERSE_CONFIG.name}
-                </h1>
-                <p className="text-xs text-cyan-100 font-mono mt-0.5">
-                  Official Delegate Entry Badge
-                </p>
+            <div className="bg-gradient-to-r from-slate-950 via-slate-900 to-indigo-950 p-6 border-b border-cyan-500/30 text-white flex flex-wrap items-center justify-between gap-4">
+              <div className="flex items-center gap-4">
+                <div className="bg-slate-900/90 p-2 rounded-xl border border-slate-800">
+                  <NbkristLogo className="h-9 w-auto" />
+                </div>
+                <div className="bg-slate-900/90 p-2 rounded-xl border border-slate-800">
+                  <IeeeStudentBranchLogo className="h-9 w-auto" />
+                </div>
+                <div>
+                  <h1 className="font-orbitron font-black text-xl sm:text-2xl text-white tracking-wider">
+                    {NEXUS_VERSE_CONFIG.name}
+                  </h1>
+                  <p className="text-xs text-cyan-400 font-mono">
+                    Official Delegate Entry Badge • Oct 11, 2026
+                  </p>
+                </div>
               </div>
 
-              <div className="text-right font-mono">
-                <span className="text-xs text-cyan-200">PASS ID:</span>
-                <p className="text-lg font-black tracking-wider text-white">{registration.id}</p>
+              <div className="text-right font-mono bg-slate-950/80 px-4 py-2 rounded-xl border border-cyan-500/40">
+                <span className="text-[10px] text-cyan-300">PASS ID:</span>
+                <p className="text-base sm:text-lg font-black tracking-wider text-cyan-400">{registration.id}</p>
               </div>
             </div>
 

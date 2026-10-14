@@ -11,6 +11,7 @@ import {
   Heart
 } from 'lucide-react';
 import { IEEE_CONFIG, NEXUS_VERSE_CONFIG } from '../../config/events';
+import { IeeeStudentBranchLogo, NbkristLogo, IeeeRegion10Logo } from './Logos';
 
 export const Footer: React.FC = () => {
   const scrollToTop = () => {
@@ -26,19 +27,13 @@ export const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
           {/* Col 1: Branch Info & College */}
           <div className="lg:col-span-2 space-y-4">
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-cyan-500 to-indigo-600 p-[1.5px]">
-                <div className="w-full h-full bg-slate-950 rounded-[10px] flex items-center justify-center">
-                  <span className="font-mono font-bold text-cyan-400 text-sm">IEEE</span>
-                </div>
+            {/* Official Logos Badges in Footer */}
+            <div className="flex flex-wrap items-center gap-3">
+              <div className="p-2 rounded-xl bg-slate-900 border border-slate-800 flex items-center">
+                <IeeeStudentBranchLogo className="h-9 w-auto" />
               </div>
-              <div>
-                <h3 className="font-display font-bold text-white text-base">
-                  {IEEE_CONFIG.branchName}
-                </h3>
-                <p className="text-xs text-slate-400 font-mono">
-                  Branch Code: {IEEE_CONFIG.code} • Established {IEEE_CONFIG.established}
-                </p>
+              <div className="p-2 rounded-xl bg-slate-900 border border-slate-800 flex items-center">
+                <NbkristLogo className="h-8 w-auto" />
               </div>
             </div>
 

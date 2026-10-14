@@ -3,6 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Sun, Moon, Calendar, Sparkles, ExternalLink, ShieldCheck } from 'lucide-react';
 import { useTheme } from '../../context/ThemeContext';
 import { IEEE_CONFIG } from '../../config/events';
+import { IeeeStudentBranchLogo, NbkristLogo } from './Logos';
 
 export const IeeeNavbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -35,26 +36,19 @@ export const IeeeNavbar: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
           {/* Logo & Branch Name */}
-          <Link to="/" className="flex items-center gap-3 group">
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-cyan-500 via-blue-600 to-violet-600 p-[2px] transition-transform duration-300 group-hover:scale-105">
-              <div className="w-full h-full bg-slate-950 rounded-[10px] flex items-center justify-center">
-                <span className="font-mono font-extrabold text-cyan-400 text-sm tracking-tighter">IEEE</span>
+          <div className="flex items-center gap-3">
+            <Link to="/" className="flex items-center gap-3 group">
+              <div className="p-1 rounded-xl bg-slate-900 border border-slate-800 hover:border-cyan-500/40 transition-colors">
+                <IeeeStudentBranchLogo className="h-9 w-auto" />
+              </div>
+            </Link>
+
+            <div className="hidden lg:flex items-center pl-3 border-l border-slate-800">
+              <div className="p-1 rounded-xl bg-slate-900 border border-slate-800 hover:border-amber-500/40 transition-colors" title="N.B.K.R. Institute of Science & Technology">
+                <NbkristLogo className="h-8 w-auto" />
               </div>
             </div>
-            <div>
-              <div className="flex items-center gap-2">
-                <span className="font-display font-bold text-lg text-white group-hover:text-cyan-400 transition-colors">
-                  IEEE Student Branch
-                </span>
-                <span className="text-[10px] uppercase font-mono px-1.5 py-0.5 rounded bg-cyan-950 text-cyan-300 border border-cyan-800">
-                  {IEEE_CONFIG.code}
-                </span>
-              </div>
-              <p className="text-xs text-slate-400 hidden sm:block">
-                NBKRIST • Events Portal
-              </p>
-            </div>
-          </Link>
+          </div>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-8">

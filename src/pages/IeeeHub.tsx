@@ -19,6 +19,7 @@ import { IeeeNavbar } from '../components/common/IeeeNavbar';
 import { Footer } from '../components/common/Footer';
 import { CountdownTimer } from '../components/common/CountdownTimer';
 import { QuantumParticles } from '../components/common/QuantumParticles';
+import { OfficialOrganizersBanner } from '../components/common/Logos';
 import { IEEE_CONFIG, NEXUS_VERSE_CONFIG, OTHER_EVENTS, EventItem } from '../config/events';
 
 export const IeeeHub: React.FC = () => {
@@ -126,6 +127,11 @@ export const IeeeHub: React.FC = () => {
               <p className="font-display font-black text-2xl sm:text-3xl text-emerald-400">{IEEE_CONFIG.stats.communityReach}</p>
               <p className="text-xs text-slate-400 font-mono mt-0.5">Students Reached</p>
             </div>
+          </div>
+
+          {/* Official Organizers Logos */}
+          <div className="mt-10 max-w-4xl mx-auto">
+            <OfficialOrganizersBanner />
           </div>
         </div>
       </section>

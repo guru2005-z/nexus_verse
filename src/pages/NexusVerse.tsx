@@ -43,6 +43,19 @@ import { Footer } from '../components/common/Footer';
 import { CountdownTimer } from '../components/common/CountdownTimer';
 import { ShareModal } from '../components/common/ShareModal';
 import { QuantumParticles } from '../components/common/QuantumParticles';
+import {
+  OfficialOrganizersBanner,
+  TechPartnersMarquee,
+  IbmQuantumLogo,
+  QiskitLogo,
+  GoogleCloudLogo,
+  GithubLogo,
+  NvidiaLogo,
+  RazorpayLogo,
+  IeeeRegion10Logo,
+  NbkristLogo,
+  IeeeStudentBranchLogo
+} from '../components/common/Logos';
 import { NEXUS_VERSE_CONFIG, IEEE_CONFIG } from '../config/events';
 
 export const NexusVerse: React.FC = () => {
@@ -223,6 +236,11 @@ export const NexusVerse: React.FC = () => {
               <p className="font-orbitron font-black text-3xl text-white">IEEE</p>
               <p className="text-xs text-slate-400 font-mono mt-0.5">Verified Certificates</p>
             </div>
+          </div>
+
+          {/* Official Organizers Logos Ribbon */}
+          <div className="mt-12 max-w-5xl mx-auto">
+            <OfficialOrganizersBanner />
           </div>
         </div>
       </section>
@@ -794,40 +812,58 @@ export const NexusVerse: React.FC = () => {
         </div>
       </section>
 
-      {/* ─── SPONSORS & PARTNERS ─── */}
+      {/* ─── SPONSORS & PARTNERS (QFF SRMAP 2026 Style) ─── */}
       <section className="py-20 bg-slate-950/90 border-t border-slate-900 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <span className="text-xs font-mono font-bold text-cyan-400 uppercase tracking-widest">
-            Ecosystem Backing
+          <span className="text-xs font-mono font-bold text-cyan-400 uppercase tracking-widest flex items-center justify-center gap-2">
+            <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse" />
+            Ecosystem Backing & Technology Partners
+            <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse" />
           </span>
-          <h2 className="font-display font-black text-2xl sm:text-4xl text-white mt-1">
-            Sponsors & Technology Partners
+          <h2 className="font-display font-black text-2xl sm:text-4xl text-white mt-2">
+            Official Sponsors & Platforms
           </h2>
+          <p className="text-xs sm:text-sm text-slate-400 max-w-xl mx-auto mt-2">
+            Powering our national student developers with enterprise cloud credits, quantum simulators, hardware grants, and certified industry credentials.
+          </p>
 
           <div className="mt-12 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 items-center">
-            {NEXUS_VERSE_CONFIG.sponsors.map((sp, idx) => (
-              <a
-                key={idx}
-                href={sp.website}
-                target="_blank"
-                rel="noreferrer"
-                className="group p-5 rounded-2xl glass-card border border-slate-800 hover:border-cyan-500/40 transition-all flex flex-col items-center justify-center"
-              >
-                <div className="w-16 h-16 rounded-xl overflow-hidden mb-2 bg-slate-900 flex items-center justify-center p-2">
-                  <img
-                    src={sp.logo}
-                    alt={sp.name}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform"
-                  />
-                </div>
-                <p className="font-semibold text-xs text-white group-hover:text-cyan-300 transition-colors">
-                  {sp.name}
-                </p>
-                <span className="text-[10px] font-mono text-cyan-400 uppercase mt-0.5">
-                  {sp.tier}
-                </span>
-              </a>
-            ))}
+            {NEXUS_VERSE_CONFIG.sponsors.map((sp, idx) => {
+              const renderLogo = () => {
+                if (sp.name.includes("IBM")) return <IbmQuantumLogo className="h-7 w-auto" />;
+                if (sp.name.includes("Google")) return <GoogleCloudLogo className="h-7 w-auto" />;
+                if (sp.name.includes("GitHub")) return <GithubLogo className="h-7 w-auto" />;
+                if (sp.name.includes("Razorpay")) return <RazorpayLogo className="h-7 w-auto" />;
+                if (sp.name.includes("NVIDIA")) return <NvidiaLogo className="h-7 w-auto" />;
+                if (sp.name.includes("Region 10")) return <IeeeRegion10Logo className="h-7 w-auto" />;
+                return <span className="font-bold text-xs text-white">{sp.name}</span>;
+              };
+
+              return (
+                <a
+                  key={idx}
+                  href={sp.website}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="group p-5 rounded-2xl glass-card-quantum border border-slate-800 hover:border-cyan-500/50 hover:shadow-[0_0_25px_rgba(6,182,212,0.3)] transition-all flex flex-col items-center justify-center min-h-[140px]"
+                >
+                  <div className="h-12 flex items-center justify-center mb-3 group-hover:scale-105 transition-transform">
+                    {renderLogo()}
+                  </div>
+                  <p className="font-semibold text-xs text-white group-hover:text-cyan-300 transition-colors">
+                    {sp.name}
+                  </p>
+                  <span className="text-[10px] font-mono text-cyan-400 uppercase mt-1 bg-cyan-950/60 px-2 py-0.5 rounded border border-cyan-800/60">
+                    {sp.tier}
+                  </span>
+                </a>
+              );
+            })}
+          </div>
+
+          {/* Marquee Ticker */}
+          <div className="mt-12">
+            <TechPartnersMarquee />
           </div>
         </div>
       </section>

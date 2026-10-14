@@ -17,6 +17,7 @@ import {
 } from 'lucide-react';
 import { useTheme } from '../../context/ThemeContext';
 import { NEXUS_VERSE_CONFIG } from '../../config/events';
+import { IeeeLogo, NbkristLogo } from './Logos';
 
 export const NexusNavbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -87,6 +88,16 @@ export const NexusNavbar: React.FC = () => {
                 </span>
               </div>
             </Link>
+
+            {/* Official Logos Badges */}
+            <div className="hidden xl:flex items-center gap-3 pl-2 border-l border-slate-800">
+              <div className="bg-slate-900/80 px-2 py-1 rounded-lg border border-slate-800 flex items-center" title="N.B.K.R. Institute of Science and Technology">
+                <NbkristLogo className="h-6 w-auto" />
+              </div>
+              <div className="bg-slate-900/80 px-2 py-1 rounded-lg border border-slate-800 flex items-center" title="IEEE Student Branch">
+                <IeeeLogo className="h-5 w-auto" />
+              </div>
+            </div>
           </div>
 
           {/* Desktop Links */}
